@@ -38,6 +38,14 @@ export default function CustomerList({ customers }) {
         + Add customer
       </button>
 
+      <button
+        type="button"
+        className="secondary"
+        onClick={() => router.push("/customers/import")}
+      >
+        Import from CSV
+      </button>
+
       <div className="spacer" />
 
       {filtered.length === 0 ? (
