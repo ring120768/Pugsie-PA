@@ -15,9 +15,23 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
+  /* Soft water wash. */
+  background: linear-gradient(180deg, #e6f2fb 0%, #eef6fc 38%, #f3f7f9 100%);
+  background-attachment: fixed;
   color: var(--text);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+}
+
+/* A few soap suds drifting behind everything (stays put while you scroll). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/suds.svg") no-repeat center / cover;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Mobile-first: a single narrow column, comfortable to use one-handed in a van. */
